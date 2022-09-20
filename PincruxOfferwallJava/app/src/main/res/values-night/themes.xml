@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.PincruxOfferwallJava" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+</resources>
