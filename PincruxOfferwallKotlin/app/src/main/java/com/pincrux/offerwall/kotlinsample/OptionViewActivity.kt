@@ -2,6 +2,7 @@ package com.pincrux.offerwall.kotlinsample
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.pincrux.offerwall.PincruxOfferwall
@@ -91,5 +92,11 @@ class OptionViewActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         offerwall.destroyView()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.clear()
     }
 }
