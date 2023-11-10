@@ -68,10 +68,21 @@ class OptionViewActivity : AppCompatActivity() {
     private fun offerwallView() {
         offerwallOption()
         val offerwall = PincruxOfferwall.getInstance()
-        val view = offerwall.getPincruxOfferwallView(this,
-            PincruxCloseImpl {
+        val view = offerwall.getPincruxOfferwallView(this, object : PincruxCloseImpl {
+            override fun onClose() {
                 finish()
-            })
+            }
+
+            override fun onPermissionDenied() {
+                finish()
+            }
+
+            override fun onAction() {
+                // 충전소 화면에서 사용자의 액션이 있을때 호출됩니다
+                // 세션 타임아웃을 방지하는 용도로 사용해주세요
+            }
+        })
+
         container.addView(view)
     }
 

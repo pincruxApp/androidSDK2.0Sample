@@ -75,6 +75,17 @@ public class OptionViewActivity extends AppCompatActivity {
                     public void onClose() {
                         finish();
                     }
+
+                    @Override
+                    public void onPermissionDenied() {
+                        finish();
+                    }
+
+                    @Override
+                    public void onAction() {
+                        // 충전소 화면에서 사용자의 액션이 있을때 호출됩니다
+                        // 세션 타임아웃을 방지하는 용도로 사용해주세요
+                    }
                 });
         container.addView(view);
     }
