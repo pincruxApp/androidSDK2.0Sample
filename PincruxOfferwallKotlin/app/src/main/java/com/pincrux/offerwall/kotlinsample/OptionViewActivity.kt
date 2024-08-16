@@ -57,7 +57,6 @@ class OptionViewActivity : AppCompatActivity() {
         offerwall.setEnableTab(true)
         offerwall.setEnableScrollTopButton(true)
         offerwall.setAdDetail(true)
-        offerwall.setDisableTermsPopup(false)
         offerwall.setDisableCPS(false)
         offerwall.setOfferwallUnity(false)
         offerwall.setDarkMode(PincruxOfferwall.AUTO)

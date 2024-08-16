@@ -36,7 +36,6 @@ public class OptionActivity extends AppCompatActivity {
         offerwall.setEnableTab(true);
         offerwall.setEnableScrollTopButton(true);
         offerwall.setAdDetail(true);
-        offerwall.setDisableTermsPopup(false);
         offerwall.setDisableCPS(false);
         offerwall.setOrientationLandscape(false);
         offerwall.setOfferwallUnity(false);
