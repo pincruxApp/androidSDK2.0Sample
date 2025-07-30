@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:padding="20dp"
     tools:ignore="SpUsage">
@@ -20,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:inputType="number"
         android:hint="@string/pub_hint"
+        android:inputType="number"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
@@ -32,7 +33,6 @@
         android:layout_marginTop="20dp"
         android:background="@color/black"
         android:text="@string/next"
-        android:textSize="17dp"
-        android:textColor="@color/white" />
-
+        android:textColor="@color/white"
+        android:textSize="17dp" />
 </androidx.appcompat.widget.LinearLayoutCompat>
