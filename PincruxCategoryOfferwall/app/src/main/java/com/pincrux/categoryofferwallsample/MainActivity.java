@@ -11,7 +11,6 @@ import com.pincrux.offerwall.util.point.impl.PincruxAdPointImpl;
 import com.pincrux.offerwall.util.point.model.PincruxAdPointInfo;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
     PincruxOfferwall offerwall;
 
     @Override
@@ -31,12 +30,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button4 = findViewById(R.id.button4);
         button4.setOnClickListener(this);
 
-        String YOUR_PUBKEY = "911871";
+        Button button5 = findViewById(R.id.button5);
+        button5.setOnClickListener(this);
+
+        String YOUR_PUBKEY = "911896";
 
         offerwall = PincruxOfferwall.getInstance();
         offerwall.init(this, YOUR_PUBKEY, "pincrux_test");
         offerwall.setOfferwallType(PincruxOfferwall.BAR_PREMIUM_TYPE);
-        offerwall.setDarkMode(PincruxOfferwall.LIGHT);
+        offerwall.setDarkMode(PincruxOfferwall.AUTO);
         offerwall.setAdDetail(true);
         offerwall.setOrientationLandscape(false);
         offerwall.setEnableTab(true);
@@ -57,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     buttonString = getString(R.string.button4) + "\n" + pincruxAdPointInfo.getCpsPoint() + "P";
                     button4.setText(buttonString);
+
+                    buttonString = getString(R.string.button5) + "\n" + pincruxAdPointInfo.getGamePoint() + "P";
+                    button5.setText(buttonString);
                 }
             }
         });
@@ -66,25 +71,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button1: {    // 금융적립
-                offerwall.setOfferwallCategory(1);
+                offerwall.setOfferwallCategory(PincruxOfferwall.CATEGORY_FINANCE);
                 offerwall.startPincruxOfferwallActivity(MainActivity.this);
                 break;
             }
 
             case R.id.button2: {    // 참여적립
-                offerwall.setOfferwallCategory(2);
+                offerwall.setOfferwallCategory(PincruxOfferwall.CATEGORY_CPA);
                 offerwall.startPincruxOfferwallActivity(MainActivity.this);
                 break;
             }
 
             case R.id.button3: {    // 소셜적립
-                offerwall.setOfferwallCategory(3);
+                offerwall.setOfferwallCategory(PincruxOfferwall.CATEGORY_SOCIAL);
                 offerwall.startPincruxOfferwallActivity(MainActivity.this);
                 break;
             }
 
             case R.id.button4: {    // 구매적립
-                offerwall.setOfferwallCategory(4);
+                offerwall.setOfferwallCategory(PincruxOfferwall.CATEGORY_CPS);
+                offerwall.startPincruxOfferwallActivity(MainActivity.this);
+                break;
+            }
+
+            case R.id.button5: {    // 게임적립
+                offerwall.setOfferwallCategory(PincruxOfferwall.CATEGORY_GAME);
                 offerwall.startPincruxOfferwallActivity(MainActivity.this);
                 break;
             }
